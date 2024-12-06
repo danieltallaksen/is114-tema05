@@ -4,11 +4,11 @@ from kgmodel import Barnehage
 
 def initiate_db(db_name):
     kg1 = Barnehage(1,"Falkåsen Barnehage",25,12)
-    kg2 = Barnehage(2,"Grasmyr naturbarnehage",60,7)
+    kg2 = Barnehage(2,"Grasmyr naturbarnehage",60,0)
     kg3 = Barnehage(3,"Nustad Barnehage",30,5)
     kg4 = Barnehage(4,"Rønholdt Barnehage",18,2)
     kg5 = Barnehage(5,"Sunby Barnehage",18,6)
-    kg6 = Barnehage(6,"Uksodden Barnehage",15,4)
+    kg6 = Barnehage(6,"Uksodden Barnehage",15,0)
     kg7 = Barnehage(7,"Stokkevannet Barnehage",45,8)
     kg8 = Barnehage(8, "Grashoppa Barnehage", 35,4)
     kg9 = Barnehage(9, "Solstua Barnehage", 24, 8)
@@ -59,7 +59,6 @@ def initiate_db(db_name):
     f2 = Foresatt(2, "Solveig Imsdal", "Bekkeveien 100", "98434312", "09079233221")
     """
 
-initiate_db("kgdata.xlsx")
 
 
 

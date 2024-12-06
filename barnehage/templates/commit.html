@@ -1,5 +1,83 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Alle endringene er skrevet til dbexcel!</p>
+<h1>Data fra databasen</h1>
+
+<h2>Foresatte</h2>
+<table border="1">
+    <tr>
+        <th>Foresatt ID</th>
+        <th>Navn</th>
+        <th>Adresse</th>
+        <th>Telefonnummer</th>
+        <th>Personnummer</th>
+    </tr>
+    {% for row in data_forelder %}
+    <tr>
+        <td>{{ row['foresatt_id'] }}</td>
+        <td>{{ row['foresatt_navn'] }}</td>
+        <td>{{ row['foresatt_adresse'] }}</td>
+        <td>{{ row['foresatt_tlfnr'] }}</td>
+        <td>{{ row['foresatt_pnr'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Barnehager</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Antall plasser</th>
+        <th>Ledige plasser</th>
+    </tr>
+    {% for row in data_barnehage %}
+    <tr>
+        <td>{{ row['barnehage_id'] }}</td>
+        <td>{{ row['barnehage_navn'] }}</td>
+        <td>{{ row['barnehage_antall_plasser'] }}</td>
+        <td>{{ row['barnehage_ledige_plasser'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Barn</h2>
+<table border="1">
+    <tr>
+        <th>Barn ID</th>
+        <th>Personnummer</th>
+    </tr>
+    {% for row in data_barn %}
+    <tr>
+        <td>{{ row['barn_id'] }}</td>
+        <td>{{ row['barn_pnr'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Søknader</h2>
+<table border="1">
+    <tr>
+        <th>Søknad ID</th>
+        <th>Foresatt 1</th>
+        <th>Foresatt 2</th>
+        <th>Barn</th>
+        <th>Barnehager prioritert</th>
+        <th>Oppstartstidspunkt</th>
+        <th>Fortrinnsrett (Barnevern)</th>
+        <th>Fortrinnsrett (Sykdom i familien)</th>
+    </tr>
+    {% for row in data_soknad %}
+    <tr>
+        <td>{{ row['sok_id'] }}</td>
+        <td>{{ row['foresatt_1'] }}</td>
+        <td>{{ row['foresatt_2'] }}</td>
+        <td>{{ row['barn_1'] }}</td>
+        <td>{{ row['barnehager_prioritert'] }}</td>
+        <td>{{ row['tidspunkt_oppstart'] }}</td>
+        <td>{{ row['fr_barnevern'] }}</td>
+        <td>{{ row['fr_sykd_familie'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

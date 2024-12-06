@@ -13,7 +13,7 @@ def initiate_db(db_name):
     kg8 = Barnehage(8, "Grashoppa Barnehage", 35,4)
     kg9 = Barnehage(9, "Solstua Barnehage", 24, 8)
     kg10 = Barnehage(10, "Tiriltoppen Barnehage", 50, 9)
-    
+
     barnehage_liste = [kg1, kg2, kg3, kg4, kg5, kg6, kg7, kg8, kg9, kg10]
     
     
@@ -27,7 +27,6 @@ def initiate_db(db_name):
                           'barnehage_antall_plasser',
                           'barnehage_ledige_plasser']
     kolonner_barn = ['barn_id',
-                     'barn_navn',
                      'barn_pnr']
     kolonner_soknad = ['sok_id',
                        'foresatt_1',
@@ -54,9 +53,13 @@ def initiate_db(db_name):
         barn.to_excel(writer, sheet_name='barn')
         soknad.to_excel(writer, sheet_name='soknad')
     
+    """
+    b1 = Barn(1, "09012356472")
+    f1 = Foresatt(1, "Ole Nordmann", "Bekkeveien 100", "98434344", "09079089332")
+    f2 = Foresatt(2, "Solveig Imsdal", "Bekkeveien 100", "98434312", "09079233221")
+    """
 
-"""
-b1 = Barn(1, "09012356472")
-    f1 = Foresatt(1, "Olav Hansen", "Øvregate 22", "98434344", "09079089332")
-    f2 = Foresatt(2, "Siv Hansen", "Øvregate 22", "98434312", "09079233221")
-"""
+initiate_db("kgdata.xlsx")
+
+
+
